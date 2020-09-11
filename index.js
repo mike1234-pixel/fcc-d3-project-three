@@ -97,7 +97,7 @@ fetch(
 
     // months array
     const monthValues = [
-      null,
+      "",
       "January",
       "February",
       "March",
@@ -130,7 +130,7 @@ fetch(
 
     // create axes
     const xAxis = d3.axisBottom(xScale).tickFormat((d) => parseInt(d));
-    const yAxis = d3.axisLeft(yScale).tickFormat((d) => monthValues[d]); // converts 0-11 to january-decemenber
+    const yAxis = d3.axisLeft(yScale).tickFormat((d) => monthValues[d + 1]); // converts 0-11 to january-decemenber
 
     //   .rangePoints([10, 0]);
 
