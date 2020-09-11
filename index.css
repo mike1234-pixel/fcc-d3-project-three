@@ -13,12 +13,9 @@ body {
 .legend-container {
   width: 500px;
   height: 90px;
-  /* margin-left: calc(50% - 250px); to center */
   margin-left: 70px;
-  margin-bottom: 20px;
   font-family: arial;
   font-size: 12px;
-
   background-color: beige;
   padding: 20px;
 }
@@ -37,4 +34,8 @@ body {
 
 #description {
   margin-left: 70px;
+}
+
+.vis-container {
+  margin-bottom: -90px;
 }

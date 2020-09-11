@@ -145,7 +145,7 @@ fetch(
       );
 
     const svg = d3
-      .select("body")
+      .select(".vis-container")
       .append("svg")
       .attr("width", svgWidth + margin.left + margin.right)
       .attr("height", svgHeight + margin.top + margin.bottom)
