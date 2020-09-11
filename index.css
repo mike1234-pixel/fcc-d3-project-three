@@ -1,51 +1,20 @@
-.color-one {
-  fill: blue;
+body {
+  font-family: arial;
 }
 
-.color-two {
-  fill: red;
-}
+/* .cell:hover {
+  border: 6px inset red;
+} */
 
-.color-three {
-  fill: brown;
-}
-
-.color-four {
-  fill: pink;
-}
-
-.color-five {
-  fill: black;
-}
-
-.color-six {
-  fill: grey;
-}
-
-.color-seven {
-  fill: purple;
-}
-
-.color-eight {
-  fill: yellow;
-}
-
-.color-nine {
-  fill: orange;
-}
-
-.color-ten {
-  fill: beige;
-}
-
-.color-eleven {
-  fill: gold;
+.cell:hover {
+  cursor: pointer;
 }
 
 .legend-container {
   width: 500px;
-  height: 100px;
-  margin-left: calc(50% - 250px); /* to center */
+  height: 90px;
+  /* margin-left: calc(50% - 250px); to center */
+  margin-left: 70px;
   margin-bottom: 20px;
   font-family: arial;
   font-size: 12px;
@@ -60,4 +29,12 @@
 
 .tooltip-invisible {
   visibility: hidden;
+}
+
+.main-heading {
+  margin-left: 70px;
+}
+
+#description {
+  margin-left: 70px;
 }

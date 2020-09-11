@@ -97,7 +97,7 @@ fetch(
 
     // months array
     const monthValues = [
-      "",
+      null,
       "January",
       "February",
       "March",
@@ -111,21 +111,6 @@ fetch(
       "November",
       "December",
     ];
-
-    ///
-    //     var monthLabel = d3.scale.ordinal()
-    //     .domain(months)
-    //     .rangeBands([0, PLOT.HEIGHT]);
-
-    //     var monthAxisConfig = d3.svg.axis()
-    //     .orient("left")
-    //     .scale(monthLabel);
-    //   var monthAxis = plot.append("g")
-    //     .classed("axis", true)
-    //     .attr("transform", "translate(0,0)")
-    //     .call(monthAxisConfig);
-
-    ///
 
     // scales
 
@@ -171,11 +156,10 @@ fetch(
     let uniqueYears = [...new Set(yearValues)];
 
     // tooltip
-
-    // create a tooltip
-    var tooltip = d3
-      .select(".tooltip-container")
+    const tooltip = d3
+      .select("#tooltip-container")
       .append("div")
+      .html("sjsdks")
       .attr("id", "tooltip")
       .style("opacity", 0);
 
@@ -218,14 +202,27 @@ fetch(
         } else {
           return colorChart.color1.hex;
         }
+      })
+      .on("mouseover", (d, i) => {
+        let x = d3.event.x;
+        let y = d3.event.y;
+        console.log(x);
+        console.log(y);
+
+        tooltip.transition().duration(20).style("opacity", 0.9);
+        tooltip
+          .html(
+            `${d.year} ${monthValues[d.month]} ${
+              Math.round((baseTemp + d.variance) * 10) / 10
+            }&#8451;`
+          )
+          .attr("data-year", d.year)
+          .attr("id", "tooltip")
+          .style("position", "absolute")
+          .style("z-index", "10")
+          .style("left", x + 10 + "px")
+          .style("top", y + "px");
       });
-    //   .on("mouseover", (d, i) => {
-    //     tooltip.transition().duration(200).style("opacity", 0.9);
-    //     tooltip.html("HELO");
-    //   })
-    //   .on("mouseout", () => {
-    //     tooltip.transition().duration(200).style("opacity", 0);
-    //   });
 
     // legend
     const colorArray = Object.values(colorChart);
@@ -261,6 +258,7 @@ fetch(
       .attr("id", "y-axis")
       .attr("transform", `translate(${padding}, 0)`) // change to 0
       .call(yAxis);
+
     svg
       .append("g")
       .attr("id", "x-axis")
