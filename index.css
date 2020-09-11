@@ -1,0 +1,63 @@
+.color-one {
+  fill: blue;
+}
+
+.color-two {
+  fill: red;
+}
+
+.color-three {
+  fill: brown;
+}
+
+.color-four {
+  fill: pink;
+}
+
+.color-five {
+  fill: black;
+}
+
+.color-six {
+  fill: grey;
+}
+
+.color-seven {
+  fill: purple;
+}
+
+.color-eight {
+  fill: yellow;
+}
+
+.color-nine {
+  fill: orange;
+}
+
+.color-ten {
+  fill: beige;
+}
+
+.color-eleven {
+  fill: gold;
+}
+
+.legend-container {
+  width: 500px;
+  height: 100px;
+  margin-left: calc(50% - 250px); /* to center */
+  margin-bottom: 20px;
+  font-family: arial;
+  font-size: 12px;
+
+  background-color: beige;
+  padding: 20px;
+}
+
+.tooltip-visible {
+  visibility: visible;
+}
+
+.tooltip-invisible {
+  visibility: hidden;
+}
