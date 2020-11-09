@@ -1,7 +1,7 @@
-# fcc-d3-project-three
-# fcc d3 data visualisation project three: heat map
+## fcc-d3-project-three
+## fcc d3 data visualisation project three: heat map
 
-## Monthly Global Land-Surface Temperature: Heat Map
+# Monthly Global Land-Surface Temperature: Heat Map
 
 This is a data visualisation project created with help from d3.js, a data vis library used to manually translate raw data into svg shapes.
 
