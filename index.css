@@ -2,10 +2,6 @@ body {
   font-family: arial;
 }
 
-/* .cell:hover {
-  border: 6px inset red;
-} */
-
 .cell:hover {
   cursor: pointer;
 }
@@ -18,6 +14,14 @@ body {
   font-size: 12px;
   background-color: beige;
   padding: 20px;
+}
+
+body {
+  background-image: url("./images/ice-caps.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Abel";
 }
 
 .tooltip-visible {

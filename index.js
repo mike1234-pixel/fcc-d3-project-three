@@ -203,25 +203,25 @@ fetch(
           return colorChart.color1.hex;
         }
       })
-      .on("mouseover", (d, i) => {
-        let x = d3.event.x;
-        let y = d3.event.y;
-        console.log(x);
-        console.log(y);
-
-        tooltip.transition().duration(20).style("opacity", 0.9);
+      .on("mouseover", (d) => {
+        tooltip.style("opacity", 0.9);
+        tooltip.attr("id", "tooltip");
         tooltip
           .html(
-            `${d.year} ${monthValues[d.month]} ${
-              Math.round((baseTemp + d.variance) * 10) / 10
-            }&#8451;`
+            `<p>${d.year}</p><p>${monthValues[d.month]}</p><p>${Math.round((baseTemp + d.variance) * 10) / 10}&#8451;</p>`
           )
-          .attr("data-year", d.year)
-          .attr("id", "tooltip")
           .style("position", "absolute")
-          .style("z-index", "10")
-          .style("left", x + 10 + "px")
-          .style("top", y + "px");
+          .style("background-color", "#06A77D")
+          .style("color", "#A70630")
+          .style("width", "100px")
+          .style("text-align", "center")
+          .style("border-radius", "55px")
+          .style("padding", "10px");
+        tooltip.style("left", d3.event.pageX + 10 + "px");
+        tooltip.style("top", d3.event.pageY - 28 + "px"); // tooltip location = hover location
+      })
+      .on("mouseout", (d) => {
+        tooltip.style("opacity", 0);
       });
 
     // legend
@@ -248,7 +248,8 @@ fetch(
         .text(`> ${Math.round(colorArray[i].range * 10) / 10}`)
         .attr("x", 50 * i)
         .attr("y", 40)
-        .style("text-anchor", "beginning");
+        .style("text-anchor", "beginning")
+        .style("font-family", "Abel");
     }
 
     // append axes
